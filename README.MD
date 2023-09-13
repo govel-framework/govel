@@ -1,6 +1,6 @@
 # Govel
 
-MyWebFramework is a lightweight and robust web framework for Go designed to provide only the essential code you need. Please note that this framework is still in development.
+Govel is a lightweight and robust web framework for Go designed to provide only the essential code you need. Please note that this framework is still in development.
 
 ## Features
 
