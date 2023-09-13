@@ -10,6 +10,6 @@ Govel is a lightweight and robust web framework for Go designed to provide only 
 
 ## Examples
 
-For usage examples of Govel, please visit our [example repository](https://github.com/govel-framework/govel-example).
+For usage examples of Govel, please visit our [example repository](https://github.com/govel-framework/example).
 
 We also encourage you to explore the example code to understand how to leverage the framework's capabilities in your own projects.
