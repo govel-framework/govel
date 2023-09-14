@@ -11,8 +11,35 @@ import (
 	"strings"
 	"time"
 
+	"github.com/gorilla/mux"
 	"github.com/gorilla/sessions"
 	yaml "gopkg.in/yaml.v2"
+)
+
+var (
+	router = mux.NewRouter().StrictSlash(true)
+
+	savedRoutes = make(map[string]*routeModel)
+	routes      []routeNamed
+
+	// A global "Panic handler" function.
+	panicHandlerFunc panicHandler
+
+	// modules to be initialized
+	modules []initModuleFunc
+
+	// Store is the session store.
+	Store *sessions.CookieStore
+
+	// Represents the configuracion of the .yaml file in a map.
+	configFileKeys map[interface{}]interface{}
+
+	// Global middlewares
+	globalMiddlewares middlewaresFunctions
+
+	// indicates if the current route is inside a group
+	inGroup            bool
+	currentGroupConfig = &groupModel{routes: make(map[string]*routeModel)}
 )
 
 // LoadConfigFileForTests returns a test model for testing.
